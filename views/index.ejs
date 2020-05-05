@@ -1,0 +1,27 @@
+<%- include('templates/header'); %>
+
+<nav class="user-bar">
+    <h3>Welcome
+        <span class="username"><%=  user.name.charAt([0]).toUpperCase() + user.name.slice(1).toLowerCase() %></span>
+    </h3>
+    <p><a href="/logout">Logout</a></p>
+</nav>
+
+<div id="map" class="map"></div>
+
+<%- include('templates/messages'); %>
+
+<h2>Add place</h2>
+
+<form id="place-form" class="form">
+    <input type="text" class="input" id="place-id" placeholder="Unique place id" required />
+    <input type="text" class="input" id="place-address" placeholder="Address" required />
+
+    <input type="hidden" id="user-id" name="user-id" value="<%= user._id %>">
+    <input type="submit" value="Add Place" class="btn" />
+</form>
+
+<!-- scripts -->
+<script src="/js/add.js"></script>
+<script src="js/map.js"></script>
+<%- include('templates/footer'); %>

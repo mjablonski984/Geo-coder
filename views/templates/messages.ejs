@@ -1,0 +1,15 @@
+<!-- Flash error messages-->
+<% if(typeof errors != 'undefined'){ %> <% errors.forEach(error =>{ %>
+<p class="messages error">
+  <%= error.msg %>
+</p>
+<% }); %> <% } %> <% if(success != ''){ %>
+<p class="messages success">
+  <%= success %>
+</p>
+
+<% } %> <% if(error != ''){ %>
+<p class="messages error">
+  <%= error %>
+</p>
+<% } %>

@@ -1,0 +1,165 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+    color: #f1faee;
+}
+  
+#root {
+    height: 100vh;
+    --color-light: #f1faee;
+    --color-dark: #003049;
+    --color-primary: #a8dadc;
+    --color-red: #e63946;
+    --color-green: #02c39a;
+}
+  
+html,
+body {
+    background-color: #003049;
+    
+}
+  
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    margin: 0 auto;
+    color: var(--color-light);
+}
+
+a {
+    text-decoration: none;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    color: #a8dadc;
+}
+a:hover {
+    color: #e63946
+}
+
+h2 {
+    margin: 1rem auto;
+    color: #02c39a;
+}
+
+.header, .footer {
+    display: flex;
+    padding: 0.75rem;
+    max-width: 1400px;
+    justify-content: center;
+}
+
+.header {
+    margin: 0 auto auto;
+}
+
+.header i {
+    color: #02c39a;
+    margin-right: 0.5rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto auto;
+    padding: 1rem 2rem;
+    width: 100%;
+    max-width: 1400px;
+}
+
+.user-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem 0;
+    margin-bottom: 3rem;
+}
+
+.username {
+    color: #02c39a;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 40%;
+    min-width: 500px;
+}
+
+.input,.btn{
+    width: 100%;
+    padding: 0.75rem 1rem ;
+    font-size: 1.2rem;
+    border: none;
+    color: #003049;
+    border-radius: 5px;
+}
+
+.input {
+    margin-bottom: 1rem;
+    outline: none;
+    background-color: #f1faee;
+  }
+
+.btn {
+    outline: none;
+    margin: 1rem auto;
+    cursor: pointer;
+    background-color: #02c39a;
+    text-transform: uppercase;
+}
+
+.btn:hover {
+    color: #f1faee;
+}
+
+.map {
+    width: 95%;
+    height: 500px;
+    border-radius: 5px;
+    margin: 0 auto 2rem;
+}
+
+.leaflet-popup-content {
+    text-align: center;
+    font-weight: 500;
+}
+
+.leaflet-popup-content p {
+    color: #02c39a;
+}
+
+.leaflet-popup-content span {
+    color: #003049;
+}
+
+
+.messages {
+    height: 1rem;
+    margin-bottom: 1rem;
+}
+
+.error {
+    color: #e63946;
+}
+
+.success {
+    color: #02c39a;
+}
+
+.footer {
+    margin: auto auto 0 ;  
+}
+
+@media (max-width: 800px){
+    .form {
+        min-width: 95%
+    }
+}    
