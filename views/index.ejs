@@ -1,17 +1,19 @@
 <%- include('templates/header'); %>
 
 <nav class="user-bar">
-    <h3>Welcome
-        <span class="username"><%=  user.name.charAt([0]).toUpperCase() + user.name.slice(1).toLowerCase() %></span>
-    </h3>
+    <p><a href="#place-form">Add&nbsp;place</a></p>
     <p><a href="/logout">Logout</a></p>
 </nav>
 
+<h3>Places added by user
+    <span class="success"><%=  user.name.charAt([0]).toUpperCase() + user.name.slice(1).toLowerCase() %></span>
+</h3>
+
 <div id="map" class="map"></div>
 
-<%- include('templates/messages'); %>
-
 <h2>Add place</h2>
+<p class="info-p"><span class="info">Unique place id:</span> e.g. Eiffel Tower </p>
+<p class="info-p"><span class="info">Address:</span> e.g. Champ de Mars, Paris</p>
 
 <form id="place-form" class="form">
     <input type="text" class="input" id="place-id" placeholder="Unique place id" required />
@@ -23,5 +25,7 @@
 
 <!-- scripts -->
 <script src="/js/add.js"></script>
+<script src="/js/delete.js"></script>
 <script src="js/map.js"></script>
+
 <%- include('templates/footer'); %>

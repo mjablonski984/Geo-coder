@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const Place = require('../models/Place');
+const { checkAuthenticated } = require('../config/auth');
 
-router.get('/', async (req, res, next) => {
+router.get('/', checkAuthenticated, async (req, res) => {
   try {
     const place = await Place.find({ 'user': req.user._id });
 
@@ -12,7 +13,7 @@ router.get('/', async (req, res, next) => {
   }
 });
 
-router.post('/', async (req, res, next) => {
+router.post('/', checkAuthenticated, async (req, res) => {
   try {
     const place = await Place.create(req.body); // save data in the db
 
@@ -22,6 +23,17 @@ router.post('/', async (req, res, next) => {
     if (err.code === 11000) {
       return res.status(400).json({ error: 'This place already exists' });
     }
+    res.status(500).json({ error: 'Server error' });
+  }
+});
+
+router.delete('/', checkAuthenticated, async (req, res) => {
+  try {
+    await Place.findOneAndDelete({ _id: req.body.id });
+
+    return res.status(200).json({ 'Deleted': 'Success' });
+  } catch (err) {
+    console.error(err);
     res.status(500).json({ error: 'Server error' });
   }
 });

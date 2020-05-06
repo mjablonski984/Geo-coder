@@ -40,7 +40,7 @@ const PlaceSchema = new mongoose.Schema({
 // Geocode & create location  before saving in db
 PlaceSchema.pre('save', async function (next) {
   const loc = await geocoder.geocode(this.address);
-  console.log(loc);
+  // console.log(loc);
 
   function trim(str) {
     str = str.replace(' , ', ' ');
