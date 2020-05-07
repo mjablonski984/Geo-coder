@@ -7,7 +7,7 @@
     "start": "node server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "mjablonski",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
